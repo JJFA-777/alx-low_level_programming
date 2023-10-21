@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - This is to print a linr of string
+ * main - This is a function to print a line of string
  *
- * Retur: 0 upon success
+ * Return: 0 upon success
  */
 
 int main(void)
