@@ -15,14 +15,15 @@ char *cap_string(char *str)
 
 	if (isalpha(str[i]))
 	{
-		str[i] = toupper(str[i]);
+		str[i] = str[i] - 32;
 	}
-	for (i = 1; str[i] != '\0'; i++)
+	while (str[i] != '\0')
 	{
-		if (isalpha(str[i]) && !isalpha(str[i - 1]))
+		if ((isalpha(str[i]) && islower(str[i])) && !(isalpha(str[i - 1])))
 		{
-			str[i] = toupper(str[i]);
+			str[i] = str[i] - 32;
 		}
+		i++;
 	}
 	return (str);
 }
