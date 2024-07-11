@@ -2,7 +2,7 @@
 
 /**
  * _print_rev_recursion - a function that prints a string in reverse.
- * s: string to be reversed.
+ *@s: string to be reversed.
  *
  * Return 0 .
  */
