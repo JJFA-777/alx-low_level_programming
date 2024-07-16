@@ -17,7 +17,6 @@ char *create_array(unsigned int size, char c)
 
 	if (size == 0)
 	{
-		printf("Initialisation failed");
 		return (NULL);
 	}
 	s = malloc(size * sizeof(char));
