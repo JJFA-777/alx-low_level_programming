@@ -15,6 +15,11 @@ char *_strdup(char *str)
 	unsigned int i, len = 0;
 	char *s;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	while (str[len] != '\0')
 	{
 		len++;
@@ -23,10 +28,8 @@ char *_strdup(char *str)
 	s = malloc((len + 1) * sizeof(char));
 
 	if (s == NULL)
-	{
-		printf("Malloc failed");
 		return (NULL);
-	}
+
 	for (i = 0; i < len; i++)
 		s[i] = str[i];
 
