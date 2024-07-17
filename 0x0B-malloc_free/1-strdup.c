@@ -12,22 +12,25 @@
 
 char *_strdup(char *str)
 {
-	unsigned int i = 0;
+	unsigned int i, len = 0;
 	char *s;
 
-	s = malloc(sizeof(str));
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+
+	s = malloc((len + 1) * sizeof(char));
 
 	if (s == NULL)
 	{
 		printf("Malloc failed");
 		return (NULL);
 	}
-	while (str[i] != '\0')
-	{
+	for (i = 0; i < len; i++)
 		s[i] = str[i];
-		i++;
-	}
-	s[strlen(str)] = '\0';
+
+	s[len] = '\0';
 
 	return (s);
 }
