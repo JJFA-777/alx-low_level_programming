@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Format: ./calc num1 operation num2\n");
+		printf("Error\n");
 		return (98);
 	}
 	num1 = atoi(argv[1]);
