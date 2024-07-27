@@ -11,18 +11,14 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0, seen_string = 0;
+	int i = 0, scan;
 	char *str;
 
 	va_start(args, format);
 
 	while (format != NULL && format[i] != '\0')
 	{
-		if (seen_string == 0 && format[i] == 'c')
-		{
-			i++;
-			continue;
-		}
+		scan = 1;
 		switch (format[i])
 		{
 			case 'c':
@@ -39,12 +35,12 @@ void print_all(const char * const format, ...)
 				if (str == NULL)
 					str = "(nil)";
 				printf("%s", str);
-				seen_string = 1;
 				break;
 			default:
+				scan = 0;
 				break;
 		}
-		if (format[i] != '\0')
+		if (scan && format[i + 1])
 			printf(", ");
 		i++;
 	}
