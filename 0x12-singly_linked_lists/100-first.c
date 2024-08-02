@@ -2,8 +2,10 @@
 
 /**
 * print_first - prints a specific message before the main function is executed.
+*
+* This function is marked to be executed before the main function using the
+* constructor attribute.
 */
-
 void print_first(void) __attribute__((constructor));
 
 /**
